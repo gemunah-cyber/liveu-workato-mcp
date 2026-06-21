@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "Workato MCP": {
+      "command": "node",
+      "args": [
+        "ABSOLUTE_PATH_TO/workato-mcp/dist/index.js"
+      ],
+      "env": {
+        "WORKATO_API_TOKEN": "your-developer-api-token-here",
+        "WORKATO_API_BASE_URL": "https://www.workato.com/api"
+      }
+    }
+  }
+}
