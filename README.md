@@ -124,7 +124,7 @@ Cloud cannot use Windows paths like `c:\Users\...\dist\index.js`. Publish the pa
 ### Option A — GitHub Packages (recommended for LiveU)
 
 1. **Create a private repo** (e.g. `liveu/workato-mcp`) and push this folder.
-2. **Update `package.json`**: set `repository.url` to your repo; keep `"name": "@liveu/workato-mcp"` (scope must match GitHub org/user).
+2. **Update `package.json`**: set `repository.url` to your repo; keep `"name": "@gemunah-cyber/workato-mcp"` (scope must match GitHub org/user).
 3. **Build and publish** (one-time auth — see [GitHub Packages npm docs](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)):
 
 ```bash
@@ -141,7 +141,7 @@ npm publish
 |-------|--------|
 | Name | `Workato MCP` |
 | Command | `npx` |
-| Args | `["-y", "@liveu/workato-mcp"]` |
+| Args | `["-y", "@gemunah-cyber/workato-mcp"]` |
 | Env | `WORKATO_API_TOKEN` = your token (literal) |
 | Env | `WORKATO_API_BASE_URL` = `https://www.workato.com/api` |
 
