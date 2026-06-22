@@ -30,6 +30,10 @@ Workato Developer API. There is one service and no database/web frontend.
 - Because it's stdio-based, "running" it means launching it under an MCP client. To verify
   it works without a client, run `node scripts/mcp_smoke_test.mjs` — it spawns the server,
   lists tools, and makes one tool call.
-- Real credentials go in `.env` (copy from `.env.example`); `.env` is gitignored.
+- Real credentials go in `.env` (copy from `.env.example`); `.env` is gitignored. In
+  Cursor Cloud, `WORKATO_API_TOKEN` is injected as an environment variable (configured as
+  a Cursor secret) and is read directly via `process.env` — no `.env` file is needed. Note
+  secrets are injected into newly started VMs, so a token added mid-session only takes
+  effect on the next VM startup.
 - `scripts/export_central_urls.mjs` is an ad-hoc research script that depends on `exceljs`
   (NOT in `package.json`) and a real token; it is not part of the server runtime.
