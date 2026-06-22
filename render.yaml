@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: workato-mcp
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: WORKATO_API_BASE_URL
+        value: https://www.workato.com/api
+      - key: WORKATO_API_TOKEN
+        sync: false
+      - key: MCP_API_KEY
+        generateValue: true
+      - key: PORT
+        value: "8080"

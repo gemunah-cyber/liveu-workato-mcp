@@ -153,9 +153,20 @@ If the package is private, also add env `NODE_AUTH_TOKEN` = a GitHub PAT with `r
 
 Use package name `@your-scope/workato-mcp` or an unscoped unique name on [npmjs.com](https://www.npmjs.com). Same dashboard config as Option A, without `NODE_AUTH_TOKEN`.
 
-### Option C — HTTP host (skip npm; always-on)
+### Option C — HTTP host (recommended for Cursor Cloud)
 
-Run the server behind **Streamable HTTP** (Railway, Fly.io, etc.) and register the URL on the Cursor MCP dashboard as an **HTTP MCP**. Requires adding an HTTP transport to this project — use Option A unless you already host internal services.
+Run the server behind **Streamable HTTP** and register the URL on Cursor as an **HTTP MCP**. No `npx`, no GitHub npm token.
+
+Full walkthrough: **[`docs/workato-mcp-http-cursor-setup.md`](../../docs/workato-mcp-http-cursor-setup.md)** (Railway deploy + Cursor config).
+
+Quick start:
+
+```bash
+npm run build
+npm run start:http   # needs WORKATO_API_TOKEN + MCP_API_KEY in .env
+```
+
+Cursor config: URL `https://YOUR-HOST/mcp`, header `Authorization: Bearer YOUR_MCP_API_KEY`.
 
 ### Verify cloud MCP
 
